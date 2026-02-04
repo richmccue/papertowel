@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flappy Matt H.</title>
+    <title>Flappy Matt</title>
     <style>
         body {
             margin: 0;
@@ -95,7 +95,7 @@
     <canvas id="gameCanvas"></canvas>
 
     <div id="instructions">
-        Tap your phone screen or press your space bar to 'flap'
+        tap your phone screen or press your space bar to "flap"
     </div>
 
 <script>
@@ -123,7 +123,8 @@
 
     function startGame(difficulty) {
         currentDifficulty = difficulty;
-        if (difficulty === 'easy') { pipeSpeed = 0.9; currentGap = 250; }
+        // Easy speed reduced by 40% (0.9 * 0.6 = 0.54)
+        if (difficulty === 'easy') { pipeSpeed = 0.54; currentGap = 250; }
         else if (difficulty === 'medium') { pipeSpeed = 1.5; currentGap = 250; }
         else if (difficulty === 'hard') { pipeSpeed = 2.25; currentGap = 187.5; }
 
@@ -150,7 +151,6 @@
         pipes = [];
         distanceTraveled = 0;
         
-        // Place the first pipe on screen immediately
         spawnPipe(canvas.width); 
         
         isPaused = false;
